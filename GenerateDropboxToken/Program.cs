@@ -19,15 +19,14 @@ namespace GenerateDropboxToken
       
         static void Main(string[] args)
         {
-            Login();
-
+            loginclick lc = new loginclick();
+            lc.Login();
+            //Login(); 
         }
-
-       
-
+         
         static void Login()
         {
-                string url = "https://www.dropbox.com/developers/apps/info/vk3fbzlssw9nsrs#settings";
+            string url = "https://www.dropbox.com/developers/apps/info/yernrzs9pml76tv#settings";
 
                 ChromeOptions option = new ChromeOptions();
                 var service = ChromeDriverService.CreateDefaultService(AppDomain.CurrentDomain.BaseDirectory);
@@ -37,7 +36,9 @@ namespace GenerateDropboxToken
                 Thread.Sleep(10000);
                 chrome.Url = url;
                 Thread.Sleep(10000);
-                string username = "office@capital-knowledge.co.jp"; string password = "capitaloo13";
+                string username = "test@grupolorena.com.sv"; // Tu dirección de correo electrónico
+                string password = "Correo26615555"; // Tu contraseña
+                //string username = "office@capital-knowledge.co.jp"; string password = "capitaloo13";
 
                 Thread.Sleep(10000);
                 chrome.FindElement(By.Name("login_email")).SendKeys(username);
@@ -76,22 +77,23 @@ namespace GenerateDropboxToken
         }
         static void UpdateToken(String val)
         {
-           try
-            {
-                DateTime datetime = DateTime.Now;
-                SqlConnection Connection = new SqlConnection();
-                Connection.ConnectionString = "Data Source=203.137.52.23;Initial Catalog=CapitalSMS;Persist Security Info=True;User ID=sa;Password=admin123456!;Connection Timeout=60000";
-                SqlCommand myCommand = new SqlCommand("UPDATE P_Resource SET DropboxAPIToken = @token,UpdateDateTime=@datetime", Connection);
-                Connection.Open();
-                myCommand.Parameters.AddWithValue("@token", val);
-                myCommand.Parameters.AddWithValue("@datetime", datetime);
-                myCommand.ExecuteNonQuery();
-                Connection.Close();
-            }
-            catch(Exception ex)
-            { 
-                Console.WriteLine(ex.ToString());
-            }
+            Console.WriteLine(val);
+           //try
+           // {
+           //     DateTime datetime = DateTime.Now;
+           //     SqlConnection Connection = new SqlConnection();
+           //     Connection.ConnectionString = "Data Source=203.137.52.23;Initial Catalog=CapitalSMS;Persist Security Info=True;User ID=sa;Password=admin123456!;Connection Timeout=60000";
+           //     SqlCommand myCommand = new SqlCommand("UPDATE P_Resource SET DropboxAPIToken = @token,UpdateDateTime=@datetime", Connection);
+           //     Connection.Open();
+           //     myCommand.Parameters.AddWithValue("@token", val);
+           //     myCommand.Parameters.AddWithValue("@datetime", datetime);
+           //     myCommand.ExecuteNonQuery();
+           //     Connection.Close();
+           // }
+           // catch(Exception ex)
+           // { 
+           //     Console.WriteLine(ex.ToString());
+           // }
         }
 
     }
