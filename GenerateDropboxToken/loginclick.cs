@@ -23,8 +23,8 @@ namespace GenerateDropboxToken
                 Thread.Sleep(10000);
                 chrome.Url = url;
                 Thread.Sleep(10000);
-                string username = "test@grupolorena.com.sv"; // Tu dirección de correo electrónico
-                string password = "Correo26615555"; // Tu contraseña
+                string username = "test@test.com.sv"; // Tu dirección de correo electrónico
+                string password = ""; // Tu contraseña
                                                     //string username = "office@capital-knowledge.co.jp"; string password = "capitaloo13";
 
                 WebElement pageHtml = (WebElement)chrome.FindElement(By.ClassName("auth-buttons-container"));
